@@ -10,17 +10,19 @@ public class BubbleSortTest {
     private int[] expected = {-5, -2, 0, 0, 7, 9, 43, 871, 951};
     private BubbleSort bubbleSort = new BubbleSort();
 
-    @DisplayName("Can sort an array of integers using the basic bubble sort algorithm")
+    @DisplayName("Can sort an array of integers")
     @Test
-    public void givenArrayOfNumbers_whenBasicSortingCalled_thenArrayIsSorted() {
-        int[] actual = bubbleSort.basicBubbleSort(toSort);
+    public void givenArrayOfNumbers_whenPassOptimizedSortingCalled_thenArrayIsSorted() {
+        int[] actual = bubbleSort.sort(toSort);
         assertArrayEquals(expected, actual);
     }
 
-    @DisplayName("Can sort an array of integers using the pass optimized bubble sort algorithm")
+    @DisplayName("Can sort a 2-element array of integers")
     @Test
-    public void givenArrayOfNumbers_whenPassOptimizedSortingCalled_thenArrayIsSorted() {
-        int[] actual = bubbleSort.passOptimizedBubbleSort(toSort);
+    public void givenA2ElementArrayOfNumbers_whenPassOptimizedBubbleSortCalled_thenArrayIsSorted() {
+        int[] toSort = {31, -5};
+        int[] expected = {-5, 31};
+        int[] actual = bubbleSort.sort(toSort);
         assertArrayEquals(expected, actual);
     }
 }
